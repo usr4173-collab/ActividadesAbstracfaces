@@ -5,8 +5,11 @@ public class CocheCombustion extends Vehiculo {
     private boolean motorEncendido;
     private int litrosCombustible;
 
-    public CocheCombustion(String color, int numeroPuertas, int numeroRuedas, 
-        String modelo, String matricula,int litrosCombustible) {
+    public static final String ROJO = "\u001B[31m";
+    public static final String RESET = "\u001B[0m";
+
+    public CocheCombustion(String color, int numeroPuertas, int numeroRuedas,
+            String modelo, String matricula, int litrosCombustible) {
 
         super(color, numeroPuertas, numeroRuedas, modelo, matricula);
 
@@ -14,14 +17,13 @@ public class CocheCombustion extends Vehiculo {
         this.motorEncendido = false;
     }
 
-        public int getLitrosCombustible() {
+    public int getLitrosCombustible() {
         return litrosCombustible;
     }
 
     public void setLitrosCombustible(int litrosCombustible) {
         this.litrosCombustible = litrosCombustible;
     }
-    
 
     @Override
     public void arrancar() {
@@ -39,7 +41,6 @@ public class CocheCombustion extends Vehiculo {
         }
     }
 
-
     @Override
     public void pararMotor() {
 
@@ -53,7 +54,7 @@ public class CocheCombustion extends Vehiculo {
 
         if (!motorEncendido) {
 
-            System.out.println("El coche no puede moverse. Se ha apagado el motor.");
+            System.out.println("El coche no se mueve.");
             return;
         }
 
@@ -69,5 +70,18 @@ public class CocheCombustion extends Vehiculo {
         System.out.println("Has movido el coche.");
     }
 
-    
+    public void mostrarDatos() {
+
+        System.out.println(
+                ROJO +
+                "Color: " + color +
+                        "\nPuertas: " + numeroPuertas +
+                        "\nRuedas: " + numeroRuedas +
+                        "\nModelo: " + modelo +
+                        "\nMatrícula: " + matricula +
+                        "\nMotor encendido: " + motorEncendido +
+                        "\nCombustible: " + litrosCombustible + " litros"
+                    + RESET);
+    }
+
 }
