@@ -66,7 +66,7 @@ public class CocheCombustion extends Vehiculo {
 
         litrosCombustible--;
 
-        System.out.println("El coche se ha movido.");
+        System.out.println("Has movido el coche.");
     }
 
     
